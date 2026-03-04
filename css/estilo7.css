@@ -1,0 +1,178 @@
+/* ================== RESET ================== */
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+/* ================== BODY ================== */
+body {
+    background-color:#E3DACC;
+    font-family: 'Century Gothic', sans-serif;
+    color:black;
+}
+
+/* ================== MENÚ ================== */
+#header{
+    width:100%;
+    background-color:#470000;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+}
+
+.nav, .nav ul {
+    list-style:none;      /* quita viñetas de menú y submenús */
+    padding:0;
+    margin:0;
+}
+
+.nav{
+    display:flex;
+    justify-content:center; 
+    width:100%;
+}
+
+.nav li{
+    position:relative;
+}
+
+.nav li a{
+    display:block;
+    padding:10px 15px;
+    font-size:14px;
+    color:white;
+    text-decoration:none;
+    background-color:#470000;
+}
+
+.nav li a:hover{
+    background-color:#B5802D;
+}
+
+.nav li ul{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background-color:#470000;
+    min-width:160px;
+}
+
+.nav li:hover > ul{
+    display:block;
+}
+
+.nav li ul li{
+    width:100%;
+}
+
+.menu-icon{
+    display:none;
+    font-size:22px;
+    color:white;
+    cursor:pointer;
+    position:absolute;
+    right:20px;
+    top:8px;
+}
+
+/* ================== BANNER ================== */
+.banner-img{
+    margin-top:130px;
+    display:flex;
+    justify-content:center;
+    padding:20px;
+}
+
+.banner-img img{
+    max-width:100%;
+    height:auto;
+}
+
+/* ================== ACTIVIDADES INTERCALADAS ================== */
+#principal{
+    width:90%;
+    max-width:1200px;
+    margin:50px auto 30px auto;
+}
+
+.fila{
+    display:flex;
+    align-items:center;
+    margin:30px 0;
+    gap:20px;
+}
+
+.fila.izquierda{
+    flex-direction:row;
+}
+
+.fila.derecha{
+    flex-direction:row-reverse;
+}
+
+.imagen-actividad{
+    width:300px;
+    max-width:40%;
+    height:auto;
+    border-radius:8px;
+}
+
+.contenido{
+    flex:1;
+    text-align:left;
+}
+
+/* ================== FOOTER ================== */
+footer{
+    background-color:#470000;
+    color:white;
+    text-align:center;
+    padding:15px;
+}
+
+/* ================== RESPONSIVO ================== */
+@media screen and (max-width:768px){
+    .menu-icon{
+        display:block;
+    }
+
+    .nav{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        background-color:#470000;
+        position:absolute;
+        top:40px;
+        left:0;
+    }
+
+    .nav.responsive{
+        display:flex;
+    }
+
+    .nav li{
+        width:100%;
+        text-align:center;
+    }
+
+    .nav li ul{
+        position:relative;
+    }
+
+    .fila{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .contenido{
+        text-align:center;
+    }
+
+    .imagen-actividad{
+        max-width:80%;
+        margin-bottom:15px;
+    }
+}
